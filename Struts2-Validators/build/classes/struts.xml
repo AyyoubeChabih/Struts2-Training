@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts SYSTEM "struts-2.5.dtd" >
+
+<struts>
+	<package name="cm" extends="struts-default">
+		<action name="addCompany" class="org.mql.struts.web.actions.CompanyAction" method="addCompany">
+			<result name="ok">/AddCompanyOK.jsp</result>
+			<result name="error">/Error.jsp</result>
+			<result name="input">/addCompanyForm.jsp</result>
+		</action>
+	</package>
+</struts>
+
+

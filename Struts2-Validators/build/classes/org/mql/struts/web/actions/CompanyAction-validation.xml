@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+   
+<validators>
+	<field name="id">
+	    <field-validator type="int">
+	        <param name="min">0</param>
+	        <message>L'identificateur doit étre un entier supérieur à ${min}</message>
+	    </field-validator>
+	</field>
+   <field name="name">
+      <field-validator type="requiredstring">
+         <message>
+            Le nom de l'entreprise est obligatoire !
+         </message>
+      </field-validator>
+   </field>
+</validators>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="exemple" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="*Example" method="{1}" class="org.mql.example.actions.ExampleAction">
+			<result name="page1" type="tiles">page1</result>
+			<result name="page2" type="tiles">page2</result>
+		</action>
+    </package>
+</struts>
+
+

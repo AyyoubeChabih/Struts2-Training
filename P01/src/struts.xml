@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts SYSTEM "struts-2.5.dtd" >
+
+<struts>
+	<include file="config.xml" />
+
+	<package name="cm" extends="config">
+		<action name="test" class="org.mql.struts.web.actions.CompanyAction">
+			<result>/views/AddCompany.jsp</result>
+			<result name="error">/views/Error.jsp</result>
+		</action>
+		<action name="addCompany" class="org.mql.struts.web.actions.CompanyAction" method="addCompany">
+			
+			<interceptor-ref name="ConfigStack" />
+			<!-- <interceptor-ref name="testInterceptor" />
+			<interceptor-ref name="defaultStack" />                  C'est avant l'include de fichier de configuration  -->
+			
+			
+			<result name="ok">/views/AddCompany.jsp</result>
+			<result name="ok2" type="chain">                    	<!-- pour le chainage appele l'action suivant (chainage de resultat, chainage d'action) -->
+				<param name="actionName">companyList</param>
+			</result>
+			<result name="error">/views/Error.jsp</result>
+		</action>
+		
+		<action name="companyList" class="org.mql.struts.web.actions.CompanyAction" method="addCompany">
+			
+			<interceptor-ref name="ConfigStack" />
+			<!-- <interceptor-ref name="testInterceptor" />
+			<interceptor-ref name="defaultStack" />                  C'est avant l'include de fichier de configuration  -->
+			
+			
+			<result name="ok">/views/CompanyList.jsp</result>
+		</action>
+	</package>
+</struts>

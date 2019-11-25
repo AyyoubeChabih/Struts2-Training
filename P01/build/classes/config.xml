@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts SYSTEM "struts-2.5.dtd" >
+<struts>
+	<package name="config" abstract="true" extends="struts-default">
+		<interceptors>
+			<interceptor name="testInterceptor" class="org.mql.struts.web.interceptors.TestInterceptor" />
+			<interceptor name="identifierInterceptor" class="org.mql.struts.web.interceptors.IdentifierInterceptor">
+				<param name="identifierName">id</param>
+			</interceptor>
+			<interceptor name="businessInterceptor" class="org.mql.struts.web.interceptors.BusinessInterceptor" />
+			<interceptor-stack name="ConfigStack">
+				<interceptor-ref name="testInterceptor" />
+				<interceptor-ref name="identifierInterceptor" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="businessInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="ConfigStack" />
+	</package>
+</struts>
